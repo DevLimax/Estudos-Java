@@ -3,7 +3,7 @@ package colecoes;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-public class Pilha {
+public class  Pilha {
     public static void main(String[] args) {
 
         // LIFO -> Last In / First Out -> Ultimo a entrar, Primeiro a sair.
@@ -32,6 +32,6 @@ public class Pilha {
 
         System.out.println(livros.size());
         System.out.println(livros.isEmpty()); // retorna True caso a lista esteja vazia.
-
+        
     }
 }
