@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class RemoverNomes {
-    static void main() {
+
+    public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         ArrayList<String> nomes = new ArrayList<>(8);
         boolean sair = false;
@@ -19,7 +20,6 @@ public class RemoverNomes {
         nomes.add("Luisa");
 
 
-
         while (!sair) {
             System.out.print("Menu:\n(1) Remover Pessoa\n(2) Ver lista de pessoas\n(3) Sair\nEscolha: ");
             int escolha = input.nextInt();
@@ -31,6 +31,8 @@ public class RemoverNomes {
 
                     if (nomes.contains(nome)) {
                         nomes.remove(nome);
+                        System.out.println("Removido com sucesso!");
+
                     } else {
                         System.out.println("Nome não encontrado na lista.");
                     }
@@ -46,12 +48,12 @@ public class RemoverNomes {
 
                 case 3:
                     sair = true;
+                    break;
 
                 default:
                     System.out.println("Opção invalida!");
 
             }
         }
-
     }
 }
