@@ -3,7 +3,7 @@ package poo.desafiocomposicao;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CatalogoCursos {
+public class  CatalogoCursos {
 
     private final List<Curso> cursos = new ArrayList<>();
 

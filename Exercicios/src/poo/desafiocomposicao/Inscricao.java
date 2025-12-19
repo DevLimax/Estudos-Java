@@ -1,35 +1,21 @@
 package poo.desafiocomposicao;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class Inscricao {
 
-    int id;
+    UUID id;
     Aluno aluno;
     Curso curso;
     Date data_inscricao;
-    Progresso progresso = new Progresso(this);
+    final List<Progresso> progressos;
 
-    public Inscricao(int id, Aluno aluno, Curso curso) {
-        this.id = id;
-        this.aluno = aluno;
+    public Inscricao(Curso curso, Aluno aluno) {
+        this.id = UUID.randomUUID();
         this.curso = curso;
+        this.aluno = aluno;
         this.data_inscricao = new Date();
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-        Inscricao inscricao = (Inscricao) o;
-        return id == inscricao.id;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(id);
+        this.progressos = new ArrayList<>();
     }
 
     @Override
@@ -37,7 +23,18 @@ public class Inscricao {
         return "Inscricao{" +
                 "id=" + id +
                 ", data_inscricao=" + data_inscricao +
-                ", progresso=" + progresso +
+                ", progressos=" + progressos +
                 '}';
     }
+
+    double getPercentualProgresso() {
+        int total_aulas_assistidas = 0;
+        for (Progresso progresso: progressos) {
+            if (progresso.concluida) {
+                total_aulas_assistidas++;
+            }
+        }
+        return (double) total_aulas_assistidas / this.curso.getTotalAulas() * 100;
+    }
+
 }

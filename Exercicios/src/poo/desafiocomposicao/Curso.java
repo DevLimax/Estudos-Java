@@ -32,4 +32,12 @@ public class Curso {
         }
         return total;
     }
+
+    int getTotalAulas () {
+        int total = 0;
+        for (Modulo modulo: this.modulos) {
+            total += modulo.getTotalAulas();
+        }
+        return total;
+    }
 }

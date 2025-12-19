@@ -32,4 +32,12 @@ public class Modulo {
         }
         return total;
     }
+
+    int getTotalAulas() {
+        int total = 0;
+        for (Aula aula: aulas) {
+            total++;
+        }
+        return total;
+    }
 }
