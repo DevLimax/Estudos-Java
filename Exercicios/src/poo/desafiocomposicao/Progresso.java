@@ -14,7 +14,7 @@ public class Progresso {
         this.matricula = matricula;
     }
 
-    public void adicionar_aula() {
+    public void adicionar_aula_concluida() {
         aulas_concluidas++;
         int total_aulas_curso = 0;
 

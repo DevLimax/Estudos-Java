@@ -1,19 +1,16 @@
 package poo.desafiocomposicao;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class Aluno {
 
-    int id;
+    UUID id;
     String nome;
     String email;
-
     final List<Inscricao> matriculas = new ArrayList<>();
 
-    public Aluno(int id, String nome, String email) {
-        this.id = id;
+    public Aluno(String nome, String email) {
+        this.id = UUID.randomUUID();
         this.nome = nome;
         this.email = email;
     }
